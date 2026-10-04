@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "YHMgAbB0zdn6Mg3T9vrwf4sNHfUdbXWgI0icH4CLbR8=",
+  "Source": "SafeVault.Api",
+  "BasePath": "_content/SafeVault.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SafeVault.Api\\wwwroot",
+      "Source": "SafeVault.Api",
+      "ContentRoot": "C:\\coursera\\SafeVault\\SafeVault.Api\\wwwroot\\",
+      "BasePath": "_content/SafeVault.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\coursera\\SafeVault\\SafeVault.Api\\wwwroot\\index.html",
+      "SourceId": "SafeVault.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\coursera\\SafeVault\\SafeVault.Api\\wwwroot\\",
+      "BasePath": "_content/SafeVault.Api",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

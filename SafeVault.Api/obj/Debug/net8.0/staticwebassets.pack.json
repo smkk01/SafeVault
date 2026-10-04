@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\coursera\\SafeVault\\SafeVault.Api\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SafeVault.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SafeVault.Api.props",
+      "PackagePath": "build\\SafeVault.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SafeVault.Api.props",
+      "PackagePath": "buildMultiTargeting\\SafeVault.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SafeVault.Api.props",
+      "PackagePath": "buildTransitive\\SafeVault.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

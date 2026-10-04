@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeVault Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #005ea6;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>SafeVault User Registration</h2>
+
+    <form id="registerForm">
+
+        <label for="username">Username</label>
+        <input
+            type="text"
+            id="username"
+            required>
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            required>
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            required>
+
+        <label for="role">Role</label>
+        <select id="role">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+document.getElementById("registerForm")
+.addEventListener("submit", async function(event)
+{
+    event.preventDefault();
+
+    const username =
+        document.getElementById("username").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    const role =
+        document.getElementById("role").value;
+
+    try
+    {
+        const response = await fetch(
+            "/api/auth/register",
+            {
+                method: "POST",
+                headers:
+                {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password,
+                    role: role
+                })
+            });
+
+        const resultText =
+            await response.text();
+
+        const resultDiv =
+            document.getElementById("result");
+
+        if(response.ok)
+        {
+            resultDiv.className = "success";
+            resultDiv.textContent =
+                resultText;
+        }
+        else
+        {
+            resultDiv.className = "error";
+            resultDiv.textContent =
+                "Error: " + resultText;
+        }
+    }
+    catch(error)
+    {
+        document.getElementById("result")
+            .textContent =
+                "Connection error: " + error;
+    }
+});
+
+</script>
+
+</body>
+</html>

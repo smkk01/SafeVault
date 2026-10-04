@@ -1,0 +1,14 @@
+@SafeVault.Api_HostAddress = http://localhost:5156
+
+### Create a user
+POST {{SafeVault.Api_HostAddress}}/api/users/CreateUser?username=alice&email=alice%40example.com
+Accept: application/json
+
+###
+
+### Get a user
+GET {{SafeVault.Api_HostAddress}}/api/users/johndavid
+Accept: application/json
+### Get a user
+GET {{SafeVault.Api_HostAddress}}/api/users/alice' OR '1'='1
+Accept: application/json
